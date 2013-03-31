@@ -1,0 +1,154 @@
+------ Query No 1 (type = 1, tumour = 1) both result type, tumour name can be obtained-------------Blue, hybrid----
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?start ?stop ?mean 
+where 
+{ 
+?s        tcga:bcr_patient_barcode  "TCGA-18-4721". 
+?s        tcga:result   ?recordNo. 
+?recodNo  rdf:type tcga:copy_number_result.
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:start   ?start. 
+?recordNo tcga:stop   ?stop. 
+?recordNo tcga:seq_mean   ?mean.
+ filter (xsd:integer(?start)>554268 &&	xsd:integer(?start)<5994290)
+}
+------Query No 2 (type = 1,tumour = 0)----------------Pink,star---------------------------
+
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?start ?stop ?RPKM 
+where 
+{ 
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:start   ?start. 
+?recordNo tcga:stop   ?stop. 
+?recordNo tcga:RPKM  ?RPKM. 
+}
+------Query No 3 (type = 1,tumour = 0)--------------------------GREEN,hybrid-----------------
+
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?position ?betaValue 
+where 
+{ 
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:position   ?position. 
+?recordNo tcga:beta_value   ?betaValue. 
+}
+------Query No 4 (type = 0,tumour = 1)---------------------------cross-color, hybrid----------------
+
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?start ?stop 
+where 
+{ 
+?s        tcga:bcr_patient_barcode  "TCGA-C4-A0F6". 
+?s        tcga:result   ?recordNo. 
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:start   ?start. 
+?recordNo tcga:stop   ?stop. 
+}
+------Query No 5 (type = 0,tumour = 0)------------------------------cross-color, star-------------
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?start ?stop 
+where 
+{ 
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:start   ?start. 
+?recordNo tcga:stop   ?stop. 
+}
+------Query No 6 (type = 1,tumour = 1)-------------------------------Blue,star------------
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?start ?stop ?rpmmm 
+where 
+{ 
+<http://tcga.deri.ie/TCGA-AB-2821-m20> tcga:chromosome   ?chromosom. 
+<http://tcga.deri.ie/TCGA-AB-2821-m20> tcga:start   ?start. 
+<http://tcga.deri.ie/TCGA-AB-2821-m20> tcga:stop   ?stop. 
+<http://tcga.deri.ie/TCGA-AB-2821-m20> tcga:reads_per_million_miRNA_mapped  ?rpmmm. 
+}
+------Query No 7 (type = 0,tumour = 1)-----------------------------cross-color, hybrid--------------
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?start ?stop  
+where 
+{ 
+?s        tcga:bcr_patient_barcode  "TCGA-AB-2823". 
+?s        tcga:result   ?recordNo. 
+?recordNo tcga:seq_mean  "0.0839". 
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:start   ?start. 
+?recordNo tcga:stop   ?stop. 
+
+}
+------Query No 8 (type = 1_1,tumour = 1)-----------------------------cross-color,Hybrid--------------
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?start ?stop ?RPKM ?pev 
+where 
+{ 
+{
+?s        tcga:bcr_patient_barcode  "TCGA-18-3410". 
+?s        tcga:result   ?recordNo. 
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:start   ?start. 
+?recordNo tcga:stop   ?stop. 
+?recordNo tcga:RPKM ?RPKM. 
+}
+UNION
+{
+?recordNo tcga:protein_expression_value   ?pev. 
+}
+}
+------Query No 9 (type = 1_1,tumour = 1)-----------------------------cross-color, Hybrid--------------
+
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?sEst ?betaValue  
+where 
+{ 
+{
+?s        tcga:bcr_patient_barcode  "TCGA-C5-A1BF". 
+?s        tcga:result   ?recordNo. 
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:beta_value   ?betaValue. 
+} 
+UNION 
+{
+?recordNo tcga:scaled_estimate ?sEst. 
+}
+}
+------Query No 10 (type = 1_1_1,tumour = 0)-----------------------------cross-color, star--------------
+PREFIX tcga: <http://tcga.deri.ie/schema/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select   ?chromosom ?normCount ?betaValue ?RPKM
+where 
+{
+{
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:beta_value   ?betaValue. 
+}
+Union
+{
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:scaled_estimate ?normCount. 
+}
+Union
+{
+?recordNo tcga:chromosome   ?chromosom. 
+?recordNo tcga:RPKM ?RPKM. 
+}
+}
