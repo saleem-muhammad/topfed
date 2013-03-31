@@ -1,9 +1,9 @@
-===Project Information===
+=Project Information=
 
-= Start up  =
+=== Start up  ===
 src/ie/deri/hcls/tcga/start/QueryEvaluation.java
 
-= Details =
+=== Details ===
 
 src/specification folder contains the N3 specfication file (used for load distribution) and TSS-to-Tumour (for Tumour lookup using patient barcode)
 
