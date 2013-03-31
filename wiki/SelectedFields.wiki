@@ -1,4 +1,4 @@
-==List of the selected fields from TCGA data==.
+== List of the selected fields from TCGA data ==.
 
 ==== DNA Methylation Result ====
 
@@ -42,4 +42,3 @@ chromosome, start, stop, reads_per_million_miRNA_mapped
 ==== Clinical, Lookup Files ====
 
 complete fields
-
