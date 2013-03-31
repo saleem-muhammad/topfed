@@ -1,4 +1,4 @@
-== List of the selected fields from TCGA data ==.
+== List of the selected fields from TCGA data ==
 
 ==== DNA Methylation Result ====
 
