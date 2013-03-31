@@ -9,15 +9,34 @@ src/specification folder contains the N3 specfication file (used for load distri
 
 To switch between TopFed and FedX goto 
 src/com/fluidops/fedx/optimizer/Optimizer.java and comment/uncomment the follow lines of code
+
+
 // FedX Source Selection: all nodes are annotated with their source
-  //SourceSelection sourceSelection = new SourceSelection(members, cache, queryInfo);
+  
+
+//SourceSelection sourceSelection = new SourceSelection(members, cache, queryInfo);
+
+
 //sourceSelection.doSourceSelection(info.getStatements());
 		
+
 // TCGA Source Selection: all nodes are annotated with their source
+
+
 TCGASourceSelection sourceSelection = new TCGASourceSelection(members, cache, queryInfo);
-try {			sourceSelection.doTCGASourceSelection(info.getStatements());
+
+
+try {			
+
+
+sourceSelection.doTCGASourceSelection(info.getStatements());
+
+
 		} catch (RepositoryException e) {
+
+
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+
 		}
 		
