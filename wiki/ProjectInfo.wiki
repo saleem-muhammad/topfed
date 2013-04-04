@@ -19,7 +19,7 @@ src/com/fluidops/fedx/optimizer/Optimizer.java and comment/uncomment the follow 
 
 //sourceSelection.doSourceSelection(info.getStatements());
 
-               and goto com.fluidsops.fedx.Config.java and comment 
+ and goto com.fluidsops.fedx.Config.java and comment 
 
 // only for TopFed. You can comment while running in FedX mode
 
