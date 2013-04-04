@@ -15,3 +15,7 @@ To switch between TopFed and FedX goto TopFed\src\com\fluidops\fedx\optimizer\Op
 			e.printStackTrace();
 		}
 		
+Also the following methods at com.fluidops.fedx.Config.java are only for TopFed. You can comment while running in FedX mode
+		instance.loadTCGASpefication();
+		instance.createTSStoTumourHashTable();
+		instance.loadSource_PredicateSets();
