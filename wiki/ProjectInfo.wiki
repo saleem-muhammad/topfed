@@ -18,6 +18,16 @@ src/com/fluidops/fedx/optimizer/Optimizer.java and comment/uncomment the follow 
 
 
 //sourceSelection.doSourceSelection(info.getStatements());
+
+               and goto com.fluidsops.fedx.Config.java and comment 
+
+// only for TopFed. You can comment while running in FedX mode
+
+		instance.loadTCGASpefication();
+
+		instance.createTSStoTumourHashTable();
+
+		instance.loadSource_PredicateSets();
 		
 ----
 // TCGA Source Selection: all nodes are annotated with their source
