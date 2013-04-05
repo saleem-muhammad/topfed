@@ -7,7 +7,7 @@ src/ie/deri/hcls/tcga/start/QueryEvaluation.java
 
 src/specification folder contains the N3 specfication file (used for load distribution) and TSS-to-Tumour (for Tumour lookup using patient barcode)
 
-=== switch between TopFed and FedX === 
+=== Switch between TopFed and FedX === 
 Goto src/com/fluidops/fedx/optimizer/Optimizer.java and comment/uncomment the follow lines of code
 
 
