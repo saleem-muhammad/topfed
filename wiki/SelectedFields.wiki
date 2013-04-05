@@ -1,6 +1,6 @@
 == List of the selected fields from TCGA data ==
 
-<span style="color:#32 CD 32"> DNA Methylation Result </span> 
+=== DNA Methylation Result === 
 
 chromosome, position, beta_value
 
