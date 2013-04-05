@@ -8,27 +8,28 @@ src/ie/deri/hcls/tcga/start/QueryEvaluation.java
 src/specification folder contains the N3 specfication file (used for load distribution) and TSS-to-Tumour (for Tumour lookup using patient barcode)
 
 === Switch between TopFed and FedX === 
-Goto src/com/fluidops/fedx/optimizer/Optimizer.java and comment/uncomment the follow lines of code
+Goto src.com.fluidops.fedx.optimizer.Optimizer.java and comment/uncomment the follow lines of code
 
+=== FedX Mode ===
 
 // FedX Source Selection: all nodes are annotated with their source
   
 
-//SourceSelection sourceSelection = new SourceSelection(members, cache, queryInfo);
+SourceSelection sourceSelection = new SourceSelection(members, cache, queryInfo);
 
 
-//sourceSelection.doSourceSelection(info.getStatements());
+sourceSelection.doSourceSelection(info.getStatements());
 
- and goto com.fluidsops.fedx.Config.java and comment 
-
-
-		instance.loadTCGASpefication();
-
-		instance.createTSStoTumourHashTable();
-
-		instance.loadSource_PredicateSets();
+//----Configuration changes --(com.fluidsops.fedx.Config.java)-------
 		
-----
+                //instance.loadTCGASpefication();
+
+		//instance.createTSStoTumourHashTable();
+
+		//instance.loadSource_PredicateSets();
+		
+=== TopFed Mode ===
+
 // TCGA Source Selection: all nodes are annotated with their source
 
 
@@ -48,4 +49,13 @@ sourceSelection.doTCGASourceSelection(info.getStatements());
 			e.printStackTrace();
 
 		}
+
+//----Configuration changes --(com.fluidsops.fedx.Config.java)-------
+
+
+                instance.loadTCGASpefication();
+
+		instance.createTSStoTumourHashTable();
+
+		instance.loadSource_PredicateSets();
 		
