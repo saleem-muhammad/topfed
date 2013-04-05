@@ -1,44 +1,44 @@
 == List of the selected fields from TCGA data ==
 
-=== DNA Methylation Result === 
+=== DNA Methylation Result (Green Category) === 
 
 chromosome, position, beta_value
 
 
-==== Expression Exon Result ====
+==== Expression Exon Result (Pink Category)====
 
 chromosome, start, stop, RPKM
 
 
-==== Expression Protein Result ====
+==== Expression Protein Result (Blue Category) ====
 
 chromosome, start, stop, protein_expression_value
 
 
 
-==== Expression Gene Result ====
+==== Expression Gene Result (Blue Category) ====
 
 chromosome, start, stop, scaled_estimate
 
 
 
-==== Copy Number Result ====
+==== Copy Number Result (Blue Category)====
 
 chromosome, start, stop, seg_mean
 
 
 
-==== SNP Result ====
+==== SNP Result (Blue Category)====
 
 chromosome, start, stop, seg_mean
 
 
 
-==== miRNA Result ====
+==== miRNA Result (Blue Category)====
 
 chromosome, start, stop, reads_per_million_miRNA_mapped
 
 
-==== Clinical, Lookup Files ====
+==== Clinical, Lookup Files (Blue Category)====
 
-complete fields
+Complete fields
