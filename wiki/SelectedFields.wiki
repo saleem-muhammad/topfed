@@ -1,6 +1,6 @@
 == List of the selected fields from TCGA data ==
 
-=== DNA Methylation Result (Green Category) === 
+==== DNA Methylation Result (Green Category) ====
 
 chromosome, position, beta_value
 
