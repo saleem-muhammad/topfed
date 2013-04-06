@@ -531,7 +531,7 @@ public void loadTCGASpefication() {
 	 * @return
 	 */
 	public boolean isEnableMonitoring() {
-		return Boolean.parseBoolean( props.getProperty("enableMonitoring", "true"));	
+		return Boolean.parseBoolean( props.getProperty("enableMonitoring", "false"));	
 	}
 	
 	/**

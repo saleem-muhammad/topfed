@@ -135,12 +135,12 @@ public static void main(String[] args) throws Exception
    // MonitoringUtil.printMonitoringInformation();
     while (res.hasNext()) {
 		System.out.println(count +": "+ res.next());
-    	res.next();
+    	//res.next();
 		count++;
 	}
 	  endTime = System.currentTimeMillis();
-	   System.out.println("Execution time(sec) : "+ (endTime-startTime)/1000);
-	   System.out.println("Total Number of Records: " + count );
+	 //  System.out.println("Execution time(sec) : "+ (endTime-startTime)/1000);
+	  // System.out.println("Total Number of Records: " + count );
        FederationManager.getInstance().shutDown();
 	   System.out.println("Done.");
 	   System.exit(0);
